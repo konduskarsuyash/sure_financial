@@ -38,7 +38,7 @@ export default function App() {
       if (issuer) fd.append("issuer", issuer);
 
 
-      const res = await fetch("http://127.0.0.1:8000/parse", {
+      const res = await fetch("https://sure-financial.onrender.com/parse", {
         method: "POST",
         body: fd,
       });
