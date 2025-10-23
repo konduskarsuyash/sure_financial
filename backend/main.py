@@ -30,6 +30,10 @@ async def parse_statement(file: UploadFile = File(...), issuer: str | None = For
 async def root():
     return {"message": "Credit Card Statement Parser API is running."}
 
+@app.get("/health")
+async def health_check():
+    """Simple endpoint for health checks to keep the service alive."""
+    return {"status": "ok", "timestamp": datetime.datetime.now().isoformat()}
 
 if __name__ == "__main__":
     import uvicorn
