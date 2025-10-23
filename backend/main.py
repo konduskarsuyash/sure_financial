@@ -26,6 +26,10 @@ async def parse_statement(file: UploadFile = File(...), issuer: str | None = For
 
     return JSONResponse(content=result)
 
+@app.get("/")
+async def root():
+    return {"message": "Credit Card Statement Parser API is running."}
+
 
 if __name__ == "__main__":
     import uvicorn
